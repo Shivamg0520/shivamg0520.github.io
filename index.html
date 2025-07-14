@@ -1,32 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome GitHub Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f0f0f0;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            color: #666;
-        }
-    </style>
+    <title>Your Name - Dynamic CSE Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <h1>Hello from My GitHub Page!</h1>
-    <p>This is my first website deployed using GitHub Pages.</p>
-    <p>It's live!</p>
-</body>
+    <div id="particles-js"></div>
 
+    <header>
+        <nav>
+            <div class="logo">YourName</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+                <p class="tagline">Innovating solutions. Crafting experiences. Building the future.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#projects" class="btn primary-btn">Explore My Work <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="images/your-stylized-photo.png" alt="Your Stylized Photo" class="fade-in">
+            </div>
+        </section>
+
+        <section id="about" class="about-me section-padding">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/about-me-illustration.png" alt="About Me Illustration">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm a passionate B.Tech Computer Science Engineering student dedicated to transforming complex ideas into elegant code. My journey in tech is driven by curiosity and a desire to build impactful solutions. I thrive in challenging environments and constantly seek to expand my knowledge in cutting-edge technologies.</p>
+                        <p>With a strong foundation in **Data Structures & Algorithms**, **Object-Oriented Programming**, and **Web Technologies**, I specialize in creating robust and scalable applications. I'm always eager to collaborate on exciting projects and contribute to the open-source community.</p>
+                        <a href="your-resume.pdf" target="_blank" class="btn secondary-btn">Download My Resume <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section-padding">
+            <div class="container">
+                <h2 class="section-title">My Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-item reveal-item">
+                        <i class="fab fa-react icon-gradient"></i>
+                        <h3>React.js</h3>
+                        <p>Building dynamic single-page applications.</p>
+                    </div>
+                    <div class="skill-item reveal-item">
+                        <i class="fab fa-node-js icon-gradient"></i>
+                        <h3>Node.js</h3>
+                        <p>Backend development with Express & APIs.</p>
+                    </div>
+                    <div class="fab fa-python icon-gradient"></i>
+                        <h3>Python</h3>
+                        <p>Data analysis, scripting, and backend.</p>
+                    </div>
+                    <div class="skill-item reveal-item">
+                        <i class="fas fa-database icon-gradient"></i>
+                        <h3>SQL/NoSQL</h3>
+                        <p>Database management and querying.</p>
+                    </div>
+                    <div class="skill-item reveal-item">
+                        <i class="fab fa-aws icon-gradient"></i>
+                        <h3>Cloud (AWS)</h3>
+                        <p>Cloud services and deployment.</p>
+                    </div>
+                    <div class="skill-item reveal-item">
+                        <i class="fab fa-git-alt icon-gradient"></i>
+                        <h3>Git & GitHub</h3>
+                        <p>Version control and collaboration.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section-padding">
+            <div class="container">
+                <h2 class="section-title">Showcase My Work</h2>
+                <div class="projects-grid">
+                    <div class="project-item reveal-item">
+                        <img src="images/project-ecommerce.png" alt="E-commerce Platform">
+                        <div class="project-info">
+                            <h3>E-commerce Platform</h3>
+                            <p>Developed a full-stack e-commerce site with user authentication, product listings, and payment integration. Tech: React, Node.js, MongoDB.</p>
+                            <div class="project-tags">
+                                <span>#React</span><span>#NodeJS</span><span>#MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="btn-small">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item reveal-item">
+                        <img src="images/project-portfolio-v2.png" alt="AI Chatbot Application">
+                        <div class="project-info">
+                            <h3>AI Chatbot Application</h3>
+                            <p>Built an interactive AI chatbot using natural language processing. Features: dynamic responses, learning capabilities. Tech: Python, Flask, NLTK.</p>
+                            <div class="project-tags">
+                                <span>#Python</span><span>#Flask</span><span>#AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="btn-small">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item reveal-item">
+                        <img src="images/project-data-viz.png" alt="Data Visualization Dashboard">
+                        <div class="project-info">
+                            <h3>Data Visualization Dashboard</h3>
+                            <p>Created a dynamic dashboard to visualize complex datasets, offering interactive charts and insights. Tech: D3.js, HTML, CSS, JavaScript.</p>
+                            <div class="project-tags">
+                                <span>#D3js</span><span>#DataViz</span><span>#JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="btn-small">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-intro">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="contact-info-grid">
+                    <div class="contact-detail reveal-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Me</h3>
+                        <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    </div>
+                    <div class="contact-detail reveal-item">
+                        <i class="fab fa-linkedin-in"></i>
+                        <h3>Connect on LinkedIn</h3>
+                        <p><a href="#" target="_blank">Your LinkedIn Profile</a></p>
+                    </div>
+                    <div class="contact-detail reveal-item">
+                        <i class="fab fa-github"></i>
+                        <h3>See My Code</h3>
+                        <p><a href="#" target="_blank">Your GitHub Profile</a></p>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <div class="footer-social-links">
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
