@@ -206,6 +206,7 @@ nav {
 
 .nav-links li {
     margin-left: 40px;
+    
 }
 
 .nav-links a {
@@ -228,11 +229,13 @@ nav {
     bottom: 0;
     transition: width 0.3s ease;
     border-radius: 2px;
+    
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+    
 }
 
 .nav-links a:hover,
@@ -304,8 +307,8 @@ nav {
 .hero-image img {
     max-width: 400px;
     border-radius: 50%;
-    border: 8px solid var(--accent-color-gold);
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(0, 255, 255, 0.4);
+    border: 4px solid var(--accent-color-gold);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), 0 0 60px rgba(0, 255, 255, 0.4);
     transition: all 0.5s ease;
     object-fit: cover;
     width: 100%; /* Ensure responsiveness */
@@ -314,7 +317,7 @@ nav {
 
 .hero-image img:hover {
     transform: scale(1.05) rotateZ(3deg);
-    box-shadow: 0 0 50px var(--accent-color-gold), 0 0 80px var(--accent-color-teal);
+    box-shadow: 0 0 40px var(--accent-color-gold), 0 0 60px var(--accent-color-teal);
 }
 
 .social-links {
@@ -627,7 +630,7 @@ nav {
        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
-    z-index: 0;
+    z-index: -1;
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -738,11 +741,12 @@ footer {
 
     .nav-links li {
         margin: 25px 0;
-        opacity: 0;
+        opacity: 50;
     }
 
     .nav-links.nav-active {
         transform: translateX(0%);
+        
     }
 
     .burger {
@@ -822,4 +826,8 @@ footer {
 }
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.iframe {
+    z-index: 1;
 }
