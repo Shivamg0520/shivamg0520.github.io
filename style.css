@@ -163,6 +163,11 @@ h2.section-title::after {
     padding: 100px 0;
 }
 
+section:nth-child(even) {
+    /* background-color: var(--primary-color-light); */
+    backdrop-filter: blur(2px); /* Glassmorphism effect */
+}
+
 /* Header & Navigation */
 header {
     background: var(--primary-color-dark);
@@ -826,5 +831,4 @@ footer {
 
 .iframe {
     z-index: 1;
-
 }
