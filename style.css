@@ -234,7 +234,7 @@ section:nth-child(even) {
 /* Header & Navigation */
 header {
     background: var(--primary-color-dark);
-    padding: 20px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -844,6 +844,12 @@ footer {
     }
     .container {
         padding: 15px 20px;
+    }
+    .moon {
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        right: 50px;
     }
 }
 
