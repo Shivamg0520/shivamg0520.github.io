@@ -22,6 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.classList.toggle('toggle');
     });
 
+   
+
+    // टाइपिंग एनिमेशन
+    const options = {
+        strings: ['Python Developer', 'Web Developer', 'BrainStormer',''], // यहाँ अपनी स्किल्स/टाइटल डालें
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1500,
+        loop: true
+    };
+    const typed = new Typed('.typing-effect', options);
+
+
     // NOTE: This is the ONLY navLinks.forEach loop needed in this function
     navLinks.forEach(link => {
         link.addEventListener('click', () => {

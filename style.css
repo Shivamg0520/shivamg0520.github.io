@@ -321,6 +321,21 @@ nav {
     border-radius: 2px;
 }
 
+/* animated text  */
+.hero-content .subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.hero-content .typing-effect {
+    color: #00aaff;
+    font-weight: 600;
+}
+
+
+
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
