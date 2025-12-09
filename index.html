@@ -926,9 +926,29 @@ footer {
         transform: translateX(0px);
     }
 }
+        /* CSS mein ye add karo */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00FFFF; /* Cyan color */
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+/* Jab hover karo interactive elements pe */
+.custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(2);
+    border-color: #FF006E; /* Pink color */
+}
     </style>
 </head>
 <body>
+    <!-- HTML mein ye add karo (body ke andar, kahi bhi) -->
+<div class="custom-cursor" id="cursor"></div>
     <!-- Night Sky Background (Fixed) -->
     <div class="night-sky">
         <div class="moon"></div>
@@ -1309,6 +1329,27 @@ footer {
             setActiveNavLinkOnScroll();
             scrollReveal();
         });
+        /* JavaScript mein ye add karo */
+// Custom cursor movement
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Cursor hover effect on interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .btn, .btn-small');
+
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+    });
+    
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+    });
+});
     </script>
 </body>
 </html>
