@@ -1,32 +1,74 @@
+
+// Create twinkling stars
+const starsContainer = document.getElementById('stars');
+const numStars = 200;
+
+for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = (Math.random() * 2 + 1) + 'px';
+    star.style.height = star.style.width;
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    starsContainer.appendChild(star);
+}
+
+// Create shooting stars
+function createShootingStar() {
+    const shootingStar = document.createElement('div');
+    shootingStar.className = 'shooting-star';
+    shootingStar.style.left = Math.random() * 100 + '%';
+    shootingStar.style.top = Math.random() * 50 + '%';
+    shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    starsContainer.appendChild(shootingStar);
+
+    setTimeout(() => {
+        shootingStar.remove();
+    }, 3000);
+}
+
+// Generate shooting stars randomly
+setInterval(() => {
+    if (Math.random() > 0.7) {
+        createShootingStar();
+    }
+}, 2000);
+
+// Navigation and all other scripts
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Navigation (from previous version, still good!) ---
     const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
 
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            burger.classList.toggle('toggle');
         });
 
-        // Burger Animation
-        burger.classList.toggle('toggle');
-    });
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(item => item.style.animation = '');
+            });
+        });
+    };
 
-   
-
-    // टाइपिंग एनिमेशन
+    // Typing animation
     const options = {
-        strings: ['Python Developer', 'Web Developer', 'BrainStormer',''], // यहाँ अपनी स्किल्स/टाइटल डालें
+        strings: ['Python Developer', 'Web Developer', 'BrainStormer', ''],
         typeSpeed: 50,
         backSpeed: 25,
         backDelay: 1500,
@@ -34,22 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const typed = new Typed('.typing-effect', options);
 
-
-    // NOTE: This is the ONLY navLinks.forEach loop needed in this function
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-            navLinks.forEach(item => item.style.animation = '');
-        });
-    });
-};
-
     const smoothScroll = () => {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -64,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.3 // Adjust this value: higher means section needs to be more in view
+            threshold: 0.3
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -86,24 +116,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- Particle.js Background ---
-    
-
-    // --- Scroll Reveal Animations ---
     const scrollReveal = () => {
         const revealElements = document.querySelectorAll('.reveal-item, .section-title, .contact-intro');
 
         const observerOptions = {
-            root: null, // viewport
+            root: null,
             rootMargin: '0px',
-            threshold: 0.1 // Percentage of element visible to trigger
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Stop observing once revealed
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -113,30 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- Initialize all functions ---
     navSlide();
     smoothScroll();
     setActiveNavLinkOnScroll();
     scrollReveal();
 });
+/* JavaScript mein ye add karo */
+// Custom cursor movement
+const cursor = document.getElementById('cursor');
 
-// CSS for scroll reveal
-/*
-    In style.css, add these:
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
 
-    .reveal-item, .section-title, .contact-intro {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
+// Cursor hover effect on interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .btn, .btn-small');
 
-    .reveal-item.is-visible, .section-title.is-visible, .contact-intro.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+    });
 
-    // You can add different delays if you want items in a grid to animate one by one
-    // .projects-grid .project-item:nth-child(1).is-visible { transition-delay: 0.1s; }
-    // .projects-grid .project-item:nth-child(2).is-visible { transition-delay: 0.2s; }
-    // ...and so on.
-*/
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+    });
+});
