@@ -1120,11 +1120,5 @@ footer {
   color: #000;
 }
 
-#cosmic-controls.hidden #collapse-controls {
-  transform: rotate(-180deg);
-}
-#collapse-controls {
-  transform: rotate(180deg);
-}
 
 
