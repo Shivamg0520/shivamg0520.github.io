@@ -165,3 +165,125 @@ interactiveElements.forEach(el => {
         cursor.classList.remove('hover');
     });
 });
+
+
+/* ================= COSMIC PARTICLES ================= */
+
+const canvas = document.getElementById('cosmic-canvas');
+const ctx = canvas.getContext('2d');
+
+let particles = [];
+let mouse = { x: 0, y: 0 };
+let mode = 'attract';
+let theme = 'cosmic';
+let cosmicOn = false;
+
+const themes = {
+  cosmic: ['#8b5cf6', '#3b82f6', '#ec4899'],
+  fire: ['#ff6b6b', '#ffd93d'],
+  ocean: ['#06b6d4', '#0ea5e9'],
+  matrix: ['#00ff41']
+};
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function createParticles() {
+  particles = [];
+  const count = innerWidth < 768 ? 80 : 150;
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
+      r: Math.random() * 3 + 1,
+      c: themes[theme][Math.floor(Math.random() * themes[theme].length)]
+    });
+  }
+}
+
+function animate() {
+  if (!cosmicOn) return;
+
+  ctx.fillStyle = 'rgba(10,5,32,0.25)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    let dx = mouse.x - p.x;
+    let dy = mouse.y - p.y;
+    let dist = Math.hypot(dx, dy) || 1;
+
+    if (dist < 150) {
+      let f = (150 - dist) / 150;
+      if (mode === 'attract') { p.vx += dx/dist*f; p.vy += dy/dist*f; }
+      if (mode === 'repel') { p.vx -= dx/dist*f; p.vy -= dy/dist*f; }
+      if (mode === 'orbit') { p.vx += -dy/dist*f; p.vy += dx/dist*f; }
+      if (mode === 'chaos') { p.vx += (Math.random()-0.5); p.vy += (Math.random()-0.5); }
+    }
+
+    p.x += p.vx; p.y += p.vy;
+    p.vx *= 0.98; p.vy *= 0.98;
+
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.fillStyle = p.c;
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+// ✅ GLOBAL mouse tracking (desktop)
+document.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// ✅ MOBILE support (touch)
+document.addEventListener('touchmove', (e) => {
+  if (e.touches.length > 0) {
+    mouse.x = e.touches[0].clientX;
+    mouse.y = e.touches[0].clientY;
+  }
+});
+
+
+/* ================= UI LOGIC ================= */
+
+const toggle = document.getElementById('cosmic-toggle');
+const icon = document.getElementById('toggle-icon');
+const controls = document.getElementById('cosmic-controls');
+const collapseBtn = document.getElementById('collapse-controls');
+
+toggle.onclick = () => {
+  cosmicOn = !cosmicOn;
+  canvas.style.display = cosmicOn ? 'block' : 'none';
+  document.querySelector('.night-sky').style.opacity = cosmicOn ? '0' : '1';
+  controls.classList.toggle('hidden', !cosmicOn);
+  icon.textContent = cosmicOn ? '✨' : '🌙';
+  if (cosmicOn) { createParticles(); animate(); }
+};
+
+collapseBtn.onclick = () => {
+  controls.classList.toggle('hidden');
+};
+
+document.querySelectorAll('[data-mode]').forEach(b =>
+  b.onclick = () => mode = b.dataset.mode
+);
+
+document.querySelectorAll('[data-theme]').forEach(b =>
+  b.onclick = () => {
+    theme = b.dataset.theme;
+    createParticles();
+  }
+);
+
+

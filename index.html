@@ -11,6 +11,42 @@
     
 </head>
 <body>
+    <!-- Cosmic Canvas Background -->
+<canvas id="cosmic-canvas"></canvas>
+
+<!-- Toggle Button -->
+<div id="cosmic-toggle" title="Toggle Cosmic Background">
+  <span id="toggle-icon">🌙</span>
+</div>
+
+<!-- Cosmic Controls -->
+<div id="cosmic-controls" class="hidden">
+  <div class="control-header">
+    <span>Cosmic Controls</span>
+    <button id="collapse-controls">⮜</button>
+  </div>
+
+  <div class="control-group">
+    <p>Interaction Mode</p>
+    <div class="buttons">
+      <button data-mode="attract">Attract</button>
+      <button data-mode="repel">Repel</button>
+      <button data-mode="orbit">Orbit</button>
+      <button data-mode="chaos">Chaos</button>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <p>Color Theme</p>
+    <div class="buttons">
+      <button data-theme="cosmic">Cosmic</button>
+      <button data-theme="fire">Fire</button>
+      <button data-theme="ocean">Ocean</button>
+      <button data-theme="matrix">Matrix</button>
+    </div>
+  </div>
+</div>
+
     <!-- HTML mein ye add karo (body ke andar, kahi bhi) -->
 <div class="custom-cursor" id="cursor"></div>
     <!-- Night Sky Background (Fixed) -->

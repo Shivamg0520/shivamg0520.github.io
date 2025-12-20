@@ -1011,3 +1011,120 @@ footer {
         transform: scale(1.05) translateY(-10px);
     }
 }
+
+/* ================= COSMIC BACKGROUND ================= */
+
+#cosmic-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: none;
+
+  /* 🔥 THIS IS THE KEY */
+  pointer-events: none;
+}
+
+
+#cosmic-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #7f5cff, #2a004d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 0 20px #7f5cff;
+  animation: pulse 2s infinite;
+}
+
+#cosmic-toggle span {
+  font-size: 26px;
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 15px #7f5cff; }
+  50% { box-shadow: 0 0 30px #00ffff; }
+}
+
+/* ================= CONTROLS ================= */
+
+#cosmic-controls {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 260px;
+  background: rgba(15, 10, 40, 0.75);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 15px;
+  color: white;
+  z-index: 3;
+  transition: transform 0.4s ease;
+}
+
+#cosmic-controls.hidden {
+  transform: translate(120%, -50%);
+}
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+#collapse-controls {
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group p {
+  margin-bottom: 8px;
+  color: #ffd700;
+}
+
+.control-group .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.control-group button {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.control-group button:hover {
+  background: #00ffff;
+  color: #000;
+}
+
+#cosmic-controls.hidden #collapse-controls {
+  transform: rotate(-180deg);
+}
+#collapse-controls {
+  transform: rotate(180deg);
+}
+
+
