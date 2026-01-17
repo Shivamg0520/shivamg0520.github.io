@@ -772,6 +772,8 @@ footer {
     padding: 4rem 0;
     background: rgba(34, 0, 77, 0.5);
     backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
 }
 
 .cert-container {
@@ -1130,3 +1132,91 @@ footer {
 
 
 
+
+/* Trigger button */
+    .open-btn {
+      background: var(--primary-color-dark);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin: 20px;
+      font-size: 16px;
+    }
+    .open-btn:hover { background: var(--secondary-color); }
+
+    /* Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none; /* hidden by default */
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    /* Modal box */
+    .modal {
+      background: #fff;
+      width: min(900px, 90%);
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Close button */
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Certificates grid */
+    .cert-grid {
+      overflow-y: auto;
+      max-height: calc(80vh - 60px);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    /* Certificate card */
+    .cert-card {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .cert-card p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Show modal when active */
+    .modal-overlay.active { display: flex; }
+
+#openCertModal{
+    align-items: center;
+    justify-content: center;
+}

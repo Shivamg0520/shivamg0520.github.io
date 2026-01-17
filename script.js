@@ -287,3 +287,27 @@ document.querySelectorAll('[data-theme]').forEach(b =>
 );
 
 
+const openBtn = document.getElementById('openCertModal');
+    const closeBtn = document.getElementById('closeCertModal');
+    const modalOverlay = document.getElementById('certModal');
+
+    function openModal() {
+      modalOverlay.classList.add('active');
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close when clicking outside modal
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });

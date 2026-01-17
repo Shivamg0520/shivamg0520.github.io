@@ -125,29 +125,30 @@
                             <p class="paragraph">Tkinter, Selenium, Django, Flask, and backend.</p>
                         </div>
                         <div class="skill-item reveal-item">
-                            <i class="fab fa-js icon-gradient"></i>
-                            <h3>JavaScript</h3>
-                            <p class="paragraph">Building dynamic applications.</p>
+                            <i class="fas fa-robot icon-gradient"></i>
+                            <h3>Machine Learning</h3>
+                            <p class="paragraph">Data preprocessing, feature engineering, model training and evaluation using NumPy, Pandas, scikit-learn, TensorFlow, and PyTorch.  </p>
                         </div>
-                        <div class="skill-item reveal-item">
-                            <i class="fab fa-android icon-gradient"></i>
-                            <h3>Kotlin</h3>
-                            <p class="paragraph">Android app development and deployment.</p>
-                        </div>
-                        <div class="skill-item reveal-item">
+                        
+                        <!-- <div class="skill-item reveal-item">
                             <i class="fas fa-code icon-gradient"></i>
                             <h3>C Language</h3>
                             <p class="paragraph">Basic</p>
-                        </div>
+                        </div> -->
                         <div class="skill-item reveal-item">
                             <i class="fas fa-database icon-gradient"></i>
                             <h3>SQL/NoSQL</h3>
                             <p class="paragraph">Database management and querying.</p>
                         </div>
-                        <div class="skill-item reveal-item">
+                        <!-- <div class="skill-item reveal-item">
                             <i class="fab fa-git-alt icon-gradient"></i>
                             <h3>Git & GitHub</h3>
                             <p class="paragraph">Version control and collaboration.</p>
+                        </div> -->
+                        <div class="skill-item reveal-item">
+                            <i class="fab fa-android icon-gradient"></i>
+                            <h3>Kotlin</h3>
+                            <p class="paragraph">Android app development and deployment.</p>
                         </div>
                     </div>
                 </div>
@@ -155,24 +156,61 @@
 
             <section id="certifications" class="section-padding">
                 <div class="container">
-                    <h2 class="section-title">Certifications</h2>
-                    <div class="cert-container">
-                        <div class="cert-card">
-                            <img src="oracle.png" alt="Oracle AI Badge">
-                            <h3>Oracle Cloud Infrastructure AI Foundations Associate</h3>
-                            <p class="paragraph">Issued: Oct 2025 | Valid till: Oct 2027</p>
-                            <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=99B415420350109C7CD935D3FE4C41AFFE38EA1C6E457E6371A965ED06376E10"
-                                target="_blank">View Credential</a>
-                        </div>
-                        <div class="cert-card">
-                            <img src="images/app_certificate.png"
-                                alt="App developer certificate">
-                            <h3>Android App Developer</h3>
-                            <p class="paragraph">Issued: Jan 2026</p>
-                            <a href="https://upskill.tutedude.com/certificate/TD-SHIV-AD-0046" target="_blank">View
-                                Credential</a>
+                    <button id="openCertModal" class="open-btn">
+                        <h2 class="section-title">View Certificates</h2>
+                    </button>
+
+                    <!-- Modal overlay -->
+                    <div id="certModal" class="modal-overlay">
+                        <div class="modal">
+                            <button class="modal-close" id="closeCertModal">&times;</button>
+                            <h2>My Certificates</h2>
+
+                            <!-- Certificates grid -->
+                            <div class="cert-grid">
+                                <div class="cert-card">
+                                    <img src="oracle.png" alt="Oracle AI Badge">
+                                    <h3>Oracle Cloud Infrastructure AI Foundations Associate</h3>
+                                    <p class="paragraph">Issued: Oct 2025 | Valid till: Oct 2027</p>
+                                    <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=99B415420350109C7CD935D3FE4C41AFFE38EA1C6E457E6371A965ED06376E10"
+                                        target="_blank">View Credential</a>
+                                </div>
+                                <div class="cert-card">
+                                    <img src="images/app_certificate.png" alt="App developer certificate">
+                                    <h3>Android App Developer</h3>
+                                    <p class="paragraph">Issued: Jan 2026</p>
+                                    <a href="https://upskill.tutedude.com/certificate/TD-SHIV-AD-0046"
+                                        target="_blank">View
+                                        Credential</a>
+                                </div>
+                                <div class="cert-card">
+                                    <img src="images/ethical_hacking_certificate.png" alt="Ethical Hacking Certificate">
+                                    <h3>Ethical Hacking</h3>
+                                    <p class="paragraph">Issued: April 2025</p>
+                                    <a href="https://upskill.tutedude.com/certificate/TD-SHIV-EH-2008"
+                                        target="_blank">View
+                                        Credential</a>
+                                </div>
+                                <!-- Add more cert-card items here -->
+                            </div>
                         </div>
                     </div>
+                    <!-- <div class="cert-container">
+                    <div class="cert-card">
+                        <img src="oracle.png" alt="Oracle AI Badge">
+                        <h3>Oracle Cloud Infrastructure AI Foundations Associate</h3>
+                        <p class="paragraph">Issued: Oct 2025 | Valid till: Oct 2027</p>
+                        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=99B415420350109C7CD935D3FE4C41AFFE38EA1C6E457E6371A965ED06376E10"
+                            target="_blank">View Credential</a>
+                    </div>
+                    <div class="cert-card">
+                        <img src="images/app_certificate.png" alt="App developer certificate">
+                        <h3>Android App Developer</h3>
+                        <p class="paragraph">Issued: Jan 2026</p>
+                        <a href="https://upskill.tutedude.com/certificate/TD-SHIV-AD-0046" target="_blank">View
+                            Credential</a>
+                    </div>
+                </div> -->
                 </div>
             </section>
 
@@ -237,7 +275,8 @@
                                 </div>
                                 <div class="project-links">
                                     <a href="https://chat-with-random.onrender.com/" target="_blank"
-                                        class="btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                                        class="btn-small">Live Demo
+                                        <i class="fas fa-external-link-alt"></i></a>
                                     <a href="https://github.com/Shivamg0520/realtime_chat" target="_blank"
                                         class="btn-small">GitHub <i class="fab fa-github"></i></a>
                                 </div>
@@ -325,13 +364,15 @@
                             <i class="fab fa-linkedin-in"></i>
                             <h3>Connect on LinkedIn</h3>
                             <p class="paragraph"><a href="https://www.linkedin.com/in/shivamg1869518/"
-                                    target="_blank">Shivam Gupta</a></p>
+                                    target="_blank">Shivam
+                                    Gupta</a></p>
                         </div>
                         <div class="contact-detail reveal-item">
                             <i class="fab fa-github"></i>
                             <h3>See My Code</h3>
                             <p class="paragraph"><a href="https://www.github.com/Shivamg0520/"
-                                    target="_blank">Shivamg0520</a></p>
+                                    target="_blank">Shivamg0520</a>
+                            </p>
                         </div>
                     </div>
                 </div>
