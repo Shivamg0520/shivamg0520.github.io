@@ -774,14 +774,22 @@ footer {
     backdrop-filter: blur(10px);
 }
 
-.cert-card {
-    max-width: 28rem;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+.cert-container {
+  display: flex;
+  flex-wrap: wrap;   /* agar width khatam ho to next line me shift */
+  gap: 20px;         /* cards ke beech spacing */
+  justify-content: center; /* center align horizontally */
 }
+
+.cert-card {
+  max-width: 28rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+
 
 .cert-card img {
     width: 6rem;
